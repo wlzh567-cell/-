@@ -44,18 +44,31 @@ export default function Home() {
             src="/images/hero-cleaning-team.png"
             alt="밝은 빈 아파트에서 창문과 바닥을 청소하는 작업자 연출 장면"
             fill
-            priority
+            preload
             sizes="100vw"
           />
           <div className="photo-hero-shade" aria-hidden="true" />
           <div className="section-shell photo-hero-inner">
             <div className="photo-hero-copy reveal">
-              <p className="hero-badge">입주청소 중심 · 공간별 상담</p>
-              <div className="hero-brand-heading">
-                <Image className="hero-brand-logo" src={siteConfig.logo} alt="" width={80} height={80} sizes="(max-width: 640px) 58px, 80px" />
-                <h1 id="hero-title">{siteConfig.brandName}</h1>
+              <div className="hero-identity">
+                <span className="hero-identity-brand">
+                  <Image
+                    className="hero-identity-logo"
+                    src="/images/oneul-reset-symbol.svg"
+                    alt=""
+                    width={36}
+                    height={36}
+                    sizes="(max-width: 640px) 26px, 36px"
+                  />
+                  <span>{siteConfig.brandName}</span>
+                </span>
+                <span className="hero-identity-divider" aria-hidden="true" />
+                <p className="hero-identity-service">입주청소 중심 · 공간별 상담</p>
               </div>
-              <p className="hero-tagline">{siteConfig.tagline}</p>
+              <h1 id="hero-title" aria-label={siteConfig.tagline}>
+                <span>{siteConfig.headlineLines[0]}</span>
+                <em>{siteConfig.headlineLines[1]}</em>
+              </h1>
               <p className="hero-brand-message">
                 <span>오래 기다려온 내 집의 첫 시작.</span>
                 <span>

@@ -2,6 +2,7 @@ export const siteConfig = {
   brandName: "오늘리셋",
   logo: "/images/oneul-reset-logo.png",
   tagline: "오늘, 공간을 다시 시작합니다.",
+  headlineLines: ["오늘, 공간을", "다시 시작합니다."],
   title: "오늘리셋 | 오늘, 공간을 다시 시작합니다.",
   description:
     "오래 기다려온 내 집의 첫 시작. 오늘리셋이 깨끗하게 열어드리겠습니다. 입주청소를 중심으로 이사청소, 사무실, 소파, 의자 청소를 상담합니다.",
