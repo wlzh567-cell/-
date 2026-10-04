@@ -1,8 +1,10 @@
 export const siteConfig = {
-  brandName: "입주청소 전문",
-  title: "입주청소 전문 | 새로운 공간의 깨끗한 시작",
+  brandName: "오늘리셋",
+  logo: "/images/oneul-reset-logo.png",
+  tagline: "오늘, 공간을 다시 시작합니다.",
+  title: "오늘리셋 | 오늘, 공간을 다시 시작합니다.",
   description:
-    "입주청소를 중심으로 이사청소, 사무실, 소파, 의자 청소 상담을 안내합니다.",
+    "오래 기다려온 내 집의 첫 시작. 오늘리셋이 깨끗하게 열어드리겠습니다. 입주청소를 중심으로 이사청소, 사무실, 소파, 의자 청소를 상담합니다.",
 } as const;
 
 export const navigation = [

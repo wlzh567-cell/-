@@ -19,10 +19,8 @@ export default function Home() {
 
       <header className="site-header">
         <div className="header-inner">
-          <a className="wordmark" href="#top" aria-label="처음으로">
-            <span className="wordmark-mark" aria-hidden="true">
-              <span />
-            </span>
+          <a className="wordmark" href="#top" aria-label={`${siteConfig.brandName} 처음으로`}>
+            <Image className="wordmark-logo" src={siteConfig.logo} alt="" width={40} height={40} sizes="(max-width: 640px) 36px, 40px" />
             {siteConfig.brandName}
           </a>
           <nav className="desktop-nav" aria-label="주요 메뉴">
@@ -53,14 +51,18 @@ export default function Home() {
           <div className="section-shell photo-hero-inner">
             <div className="photo-hero-copy reveal">
               <p className="hero-badge">입주청소 중심 · 공간별 상담</p>
-              <h1 id="hero-title">
-                입주 전 먼지와 흔적,
-                <br />
-                <em>생활 전에 정리합니다.</em>
-              </h1>
-              <p>
-                아파트부터 오피스텔까지. 주방·욕실·창틀·수납 등 입주를 앞둔 공간에서
-                필요한 청소 범위를 함께 확인합니다.
+              <div className="hero-brand-heading">
+                <Image className="hero-brand-logo" src={siteConfig.logo} alt="" width={80} height={80} sizes="(max-width: 640px) 58px, 80px" />
+                <h1 id="hero-title">{siteConfig.brandName}</h1>
+              </div>
+              <p className="hero-tagline">{siteConfig.tagline}</p>
+              <p className="hero-brand-message">
+                <span>오래 기다려온 내 집의 첫 시작.</span>
+                <span>
+                  그 소중한 순간을, {siteConfig.brandName}이{" "}
+                  <br className="hero-message-break" />
+                  깨끗하게 열어드리겠습니다.
+                </span>
               </p>
               <div className="photo-hero-actions">
                 <a className="primary-button hero-primary" href="#quote">
@@ -345,12 +347,10 @@ export default function Home() {
         <div className="section-shell footer-main">
           <div>
             <a className="wordmark footer-wordmark" href="#top">
-              <span className="wordmark-mark" aria-hidden="true">
-                <span />
-              </span>
+              <Image className="wordmark-logo" src={siteConfig.logo} alt="" width={40} height={40} sizes="(max-width: 640px) 36px, 40px" />
               {siteConfig.brandName}
             </a>
-            <p>새로운 공간의 시작을, 깨끗하게 준비합니다.</p>
+            <p>{siteConfig.tagline}</p>
           </div>
           <nav aria-label="푸터 메뉴">
             {navigation.map((item) => (
