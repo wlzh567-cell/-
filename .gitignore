@@ -1,0 +1,18 @@
+# dependencies
+/node_modules
+
+# Next.js output
+/.next
+/out
+
+# local build artifacts
+*.tsbuildinfo
+
+# logs and environment overrides
+*.log
+.env*
+!.env.example
+
+# OS files
+.DS_Store
+Thumbs.db
