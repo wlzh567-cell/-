@@ -67,8 +67,8 @@ export default function Home() {
                   견적 받기
                   <ArrowIcon />
                 </a>
-                <a className="hero-secondary" href="#move-in-cleaning">
-                  입주청소 범위 보기
+                <a className="hero-secondary" href="#move-in-cleaning" aria-label="입주청소 범위 보기">
+                  청소 범위
                   <span aria-hidden="true">↓</span>
                 </a>
               </div>

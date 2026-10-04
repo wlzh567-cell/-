@@ -3,6 +3,13 @@
 import { useEffect, useState } from "react";
 import { contactChannels, type ContactChannel } from "@/lib/content";
 
+const mobileLabels: Record<ContactChannel["id"], string> = {
+  kakao: "카카오톡",
+  blog: "블로그",
+  instagram: "인스타",
+  phone: "전화 문의",
+};
+
 export function FloatingContactBar() {
   const [notice, setNotice] = useState("");
 
@@ -19,6 +26,9 @@ export function FloatingContactBar() {
           const content = (
             <>
               <ChannelIcon id={channel.id} />
+              <span className="floating-contact-label" aria-hidden="true">
+                {mobileLabels[channel.id]}
+              </span>
               <span className="floating-contact-tooltip" aria-hidden="true">
                 <strong>{channel.label}</strong>
                 <small>{channel.href ? "바로 연결" : "연결 준비 중"}</small>
