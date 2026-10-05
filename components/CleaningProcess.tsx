@@ -1,4 +1,5 @@
 import { cleaningProcess } from "@/lib/content";
+import { ProcessTimeline } from "./ProcessTimeline";
 import styles from "./CleaningProcess.module.css";
 
 export function CleaningProcess() {
@@ -21,22 +22,12 @@ export function CleaningProcess() {
           </p>
         </div>
 
-        <ol className={styles.timeline} aria-label="청소 진행 7단계">
-          {cleaningProcess.map((step) => (
-            <li key={step.number} className={styles.step}>
-              <div className={styles.marker}>
-                <span className={styles.number}>{step.number}</span>
-                <span className={styles.icon}>
-                  <ProcessIcon icon={step.icon} />
-                </span>
-              </div>
-              <div className={styles.copy}>
-                <h3>{step.title}</h3>
-                <p>{step.description}</p>
-              </div>
-            </li>
-          ))}
-        </ol>
+        <ProcessTimeline
+          steps={cleaningProcess.map((step) => ({
+            ...step,
+            icon: <ProcessIcon icon={step.icon} />,
+          }))}
+        />
 
         <p className={styles.note}>
           세부 작업 범위·비용·일정은 상담 시 확인해 주세요.
