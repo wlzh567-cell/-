@@ -1,0 +1,210 @@
+.section {
+  padding-block: 112px;
+  background: #f2f7f5;
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 36px;
+}
+
+.heading h2 {
+  margin: 0;
+  font-size: clamp(32px, 3.6vw, 52px);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.055em;
+}
+
+.intro {
+  margin: 0 0 4px;
+  color: var(--ink-soft);
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  margin: 54px 0 0;
+  padding: 36px 22px;
+  border: 1px solid #dce9e4;
+  border-radius: 30px;
+  background: #fff;
+  list-style: none;
+}
+
+.step {
+  position: relative;
+  min-width: 0;
+  padding-inline: 12px;
+  text-align: center;
+}
+
+.step:not(:last-child)::after {
+  position: absolute;
+  z-index: 0;
+  top: 67px;
+  left: calc(50% + 36px);
+  width: calc(100% - 72px);
+  height: 1px;
+  background: #c8ded5;
+  content: "";
+}
+
+.marker {
+  position: relative;
+  z-index: 1;
+}
+
+.number {
+  display: block;
+  margin-bottom: 16px;
+  color: #167b76;
+  font-size: 15px;
+  font-weight: 750;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  margin-inline: auto;
+  border-radius: 50%;
+  color: #176b62;
+  background: #e5f4ed;
+}
+
+.copy h3 {
+  min-height: 52px;
+  margin: 24px 0 12px;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.55;
+  letter-spacing: -0.035em;
+}
+
+.copy p {
+  margin: 0;
+  color: #536965;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.note {
+  margin: 24px 0 0;
+  color: #5e726d;
+  font-size: 13px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.note span {
+  display: inline-block;
+  margin-left: 12px;
+}
+
+@media (max-width: 1100px) {
+  .heading {
+    display: block;
+  }
+
+  .intro {
+    margin-top: 24px;
+  }
+
+  .timeline {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 36px 0;
+    padding: 32px 16px;
+  }
+
+  .step:nth-child(4)::after {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding-block: 72px;
+  }
+
+  .heading h2 {
+    font-size: clamp(28px, 7.8vw, 36px);
+    overflow-wrap: anywhere;
+  }
+
+  .intro {
+    margin-top: 20px;
+    font-size: 15px;
+  }
+
+  .timeline {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    margin-top: 32px;
+    padding: 8px 20px;
+    border-radius: 24px;
+  }
+
+  .step {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 18px;
+    padding: 24px 0;
+    text-align: left;
+  }
+
+  .step:not(:last-child) {
+    border-bottom: 1px solid #e7eeeb;
+  }
+
+  .step:not(:last-child)::after {
+    display: block;
+    top: 89px;
+    left: 23px;
+    width: 1px;
+    height: calc(100% - 70px);
+  }
+
+  .number {
+    margin-bottom: 8px;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .icon svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .copy h3 {
+    min-height: 0;
+    margin: 2px 0 8px;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .copy p {
+    font-size: 14px;
+  }
+
+  .note {
+    text-align: left;
+  }
+
+  .note span {
+    display: block;
+    margin-left: 0;
+  }
+}

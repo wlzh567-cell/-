@@ -35,7 +35,7 @@ export function ScopeTabs() {
 
   return (
     <div className="scope-shell">
-      <div className="scope-tabs" role="tablist" aria-label="입주청소 공간 선택">
+      <div className="scope-tabs" role="tablist" aria-label="청소 상담 공간 선택">
         {scopeItems.map((item, index) => (
           <button
             key={item.id}

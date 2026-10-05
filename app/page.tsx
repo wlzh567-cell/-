@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CleaningProcess } from "@/components/CleaningProcess";
 import { FloatingContactBar } from "@/components/FloatingContactBar";
 import { QuoteForm } from "@/components/QuoteForm";
 import { ScopeTabs } from "@/components/ScopeTabs";
@@ -6,7 +7,6 @@ import {
   equipmentItems,
   faqItems,
   navigation,
-  secondaryServices,
   siteConfig,
 } from "@/lib/content";
 
@@ -63,7 +63,7 @@ export default function Home() {
                   <span>{siteConfig.brandName}</span>
                 </span>
                 <span className="hero-identity-divider" aria-hidden="true" />
-                <p className="hero-identity-service">입주청소 중심 · 공간별 상담</p>
+                <p className="hero-identity-service">공간별 청소 · 맞춤 상담</p>
               </div>
               <h1 id="hero-title" aria-label={siteConfig.tagline}>
                 <span>{siteConfig.headlineLines[0]}</span>
@@ -82,14 +82,14 @@ export default function Home() {
                   견적 받기
                   <ArrowIcon />
                 </a>
-                <a className="hero-secondary" href="#move-in-cleaning" aria-label="입주청소 범위 보기">
+                <a className="hero-secondary" href="#move-in-cleaning" aria-label="청소 상담 범위 보기">
                   청소 범위
                   <span aria-hidden="true">↓</span>
                 </a>
               </div>
-              <ul className="hero-points" aria-label="입주청소 상담 특징">
-                <li>입주청소 중심</li>
-                <li>아파트·오피스텔 상담</li>
+              <ul className="hero-points" aria-label="청소 상담 안내">
+                <li>공간별 청소 상담</li>
+                <li>주거·업무·가구 청소</li>
                 <li>공간별 요청 범위 확인</li>
               </ul>
             </div>
@@ -97,14 +97,14 @@ export default function Home() {
           <p className="photo-disclaimer">서비스 이해를 돕기 위한 생성 연출 이미지</p>
         </section>
 
-        <section className="quick-service-strip" aria-label="상담 가능한 서비스">
+        <section className="quick-service-strip anchor-section" id="services" aria-label="상담 가능한 서비스">
           <div className="section-shell quick-service-inner">
             <p>상담 가능한 서비스</p>
             <div>
               <a href="#move-in-cleaning"><strong>입주청소</strong><span>새 공간을 시작하기 전</span></a>
-              <a href="#services"><strong>이사청소</strong><span>이사 전후 비어 있는 공간</span></a>
-              <a href="#services"><strong>사무실 청소</strong><span>업무·공용 공간</span></a>
-              <a href="#services"><strong>소파·의자</strong><span>소재와 수량별 상담</span></a>
+              <a href="#quote"><strong>이사청소</strong><span>이사 전후 비어 있는 공간</span></a>
+              <a href="#quote"><strong>사무실 청소</strong><span>업무·공용 공간</span></a>
+              <a href="#quote"><strong>소파·의자</strong><span>소재와 수량별 상담</span></a>
             </div>
           </div>
         </section>
@@ -121,14 +121,14 @@ export default function Home() {
               <figcaption>서비스 이해를 돕기 위한 생성 연출 이미지</figcaption>
             </figure>
             <div className="cleaning-focus-copy">
-              <p className="section-kicker">MOVE-IN CLEANING</p>
+              <p className="section-kicker">CLEANING SCOPE</p>
               <h2>
                 눈에 보이는 면부터,
                 <br />
                 먼지가 머무는 틈까지.
               </h2>
               <p className="cleaning-focus-lead">
-                새 공간이라고 모두 같은 상태는 아닙니다. 생활 전에 확인하고 싶은 곳을 알려주면
+                공간마다 상태와 필요한 청소는 다릅니다. 신경 쓰이는 곳을 알려주시면
                 공간별 상담 범위를 정리할 수 있습니다.
               </p>
               <ul className="cleaning-check-list">
@@ -218,79 +218,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="services-section anchor-section" id="services" aria-labelledby="services-title">
-          <div className="section-shell">
-            <div className="services-heading">
-              <div>
-                <p className="section-kicker">BEYOND MOVE-IN</p>
-                <h2 id="services-title">
-                  다른 공간의 고민도
-                  <br />
-                  이어서 들을게요.
-                </h2>
-              </div>
-              <p>
-                주력은 입주청소입니다. 이사 전후 공간과 업무 공간, 패브릭 가구도 상태와
-                소재를 바탕으로 상담할 수 있습니다.
-              </p>
-            </div>
-
-            <div className="service-grid">
-              {secondaryServices.map((service, index) => (
-                <article key={service.title} className={`service-item service-${service.tone}`}>
-                  <span className="service-number">{service.number}</span>
-                  <ServiceIcon index={index} />
-                  <div>
-                    <h3>{service.title}</h3>
-                    <p>{service.description}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-            <p className="service-caption">
-              실제 제공 가능 지역과 세부 작업 범위는 운영 정보 확정 후 안내됩니다.
-            </p>
-          </div>
-        </section>
-
-        <section className="process-section anchor-section" id="process" aria-labelledby="process-title">
-          <div className="section-shell process-layout">
-            <div className="process-heading">
-              <p className="section-kicker">QUOTE PROCESS</p>
-              <h2 id="process-title">
-                청소 상담은,
-                <br />
-                정보 확인부터.
-              </h2>
-              <p>
-                필요한 정보를 입력하고, 상담에 전달할 내용을 한눈에 확인해 보세요.
-              </p>
-            </div>
-            <ol className="process-list">
-              <li>
-                <span>01</span>
-                <div>
-                  <h3>서비스와 공간 정보 정리</h3>
-                  <p>원하는 청소, 공간 유형, 지역과 궁금한 점을 적습니다.</p>
-                </div>
-              </li>
-              <li>
-                <span>02</span>
-                <div>
-                  <h3>요청 내용을 한눈에 확인</h3>
-                  <p>필수 항목과 연락처 형식을 확인하고 요청 내용을 정리합니다.</p>
-                </div>
-              </li>
-              <li>
-                <span>03</span>
-                <div>
-                  <h3>카카오톡으로 상담 이어가기</h3>
-                  <p>정리된 내용을 복사해 연결된 1:1 오픈채팅으로 전달할 수 있습니다.</p>
-                </div>
-              </li>
-            </ol>
-          </div>
-        </section>
+        <CleaningProcess />
 
         <section className="quote-section anchor-section" id="quote" aria-labelledby="quote-title">
           <div className="section-shell quote-layout">
@@ -391,25 +319,6 @@ function CheckIcon() {
       <circle cx="11" cy="11" r="10" fill="currentColor" />
       <path d="m6.75 11.2 2.65 2.65 5.9-6" stroke="#fff" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
-  );
-}
-
-function ServiceIcon({ index }: { index: number }) {
-  const icons = [
-    <path key="home" d="M5 13.5 18 3l13 10.5V32H5V13.5Zm6 18V20h14v11.5M3 13l15-12 15 12" />,
-    <path key="office" d="M6 33V5h19v28M25 14h7v19M11 11h4m5 0h1m-10 6h4m5 0h1m-10 6h4m5 0h1M3 33h30" />,
-    <path key="sofa" d="M6 19v-5a5 5 0 0 1 5-5h14a5 5 0 0 1 5 5v5M5 17a4 4 0 0 0-4 4v8h34v-8a4 4 0 0 0-4-4m-26 8h26M6 29v4m24-4v4" />,
-    <path key="chair" d="M10 17h16v9H10zM12 17V7a6 6 0 0 1 12 0v10M18 26v7M8 33h20M10 26l-3 5m19-5 3 5" />,
-  ];
-
-  return (
-    <div className="service-icon" aria-hidden="true">
-      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-        <g stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-          {icons[index]}
-        </g>
-      </svg>
-    </div>
   );
 }
 

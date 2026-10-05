@@ -5,11 +5,11 @@ export const siteConfig = {
   headlineLines: ["오늘, 공간을", "다시 시작합니다."],
   title: "오늘리셋 | 오늘, 공간을 다시 시작합니다.",
   description:
-    "오래 기다려온 내 집의 첫 시작. 오늘리셋이 깨끗하게 열어드리겠습니다. 입주청소를 중심으로 이사청소, 사무실, 소파, 의자 청소를 상담합니다.",
+    "오늘, 공간을 다시 시작합니다. 오늘리셋의 입주청소, 이사청소, 사무실, 소파, 의자 청소 상담과 예약부터 작업 후 확인까지의 진행 순서를 안내합니다.",
 } as const;
 
 export const navigation = [
-  { label: "입주청소", href: "#move-in-cleaning" },
+  { label: "청소 범위", href: "#move-in-cleaning" },
   { label: "장비 안내", href: "#equipment" },
   { label: "서비스", href: "#services" },
   { label: "진행 안내", href: "#process" },
@@ -54,7 +54,7 @@ export const scopeItems = [
     id: "living",
     label: "방·거실",
     index: "03",
-    title: "생활의 중심이 되는 곳",
+    title: "일상이 머무는 곳",
     description:
       "바닥, 몰딩 주변, 문과 손잡이 등 공간별로 신경 쓰이는 지점을 전달할 수 있습니다.",
     note: "공간 구조에 따라 상담 항목이 달라질 수 있습니다.",
@@ -74,35 +74,53 @@ export const scopeItems = [
     index: "05",
     title: "처음 마주하는 곳",
     description:
-      "현관 바닥과 수납장 외부 등 입주 전에 확인하고 싶은 지점을 알려주세요.",
+      "현관 바닥과 수납장 외부 등 청소 전에 확인하고 싶은 지점을 알려주세요.",
     note: "수납장 내부 등 세부 범위는 상담 시 확인합니다.",
   },
 ] as const;
 
-export const secondaryServices = [
+export const cleaningProcess = [
   {
-    title: "이사청소",
     number: "01",
-    description: "이사 전후 비어 있는 주거 공간의 청소 범위를 상담합니다.",
-    tone: "mint",
+    title: "전문 예약 상담",
+    description: "원하는 서비스와 공간 정보를 바탕으로 예약 상담을 진행합니다.",
+    icon: "consult",
   },
   {
-    title: "사무실 청소",
     number: "02",
-    description: "업무 공간과 공용 공간의 상태, 규모, 희망 범위를 확인합니다.",
-    tone: "ink",
+    title: "방문 전 고객님께 전화",
+    description: "현장에 방문하기 전 고객님께 전화로 연락드립니다.",
+    icon: "phone",
   },
   {
-    title: "소파 청소",
     number: "03",
-    description: "소재와 오염 상태를 먼저 확인한 뒤 가능한 범위를 상담합니다.",
-    tone: "sand",
+    title: "현장 확인 · 청소 범위 설명",
+    description: "현장 상태를 확인하고 청소할 범위를 설명합니다.",
+    icon: "scope",
   },
   {
-    title: "의자 청소",
     number: "04",
-    description: "사무용·패브릭 의자의 수량과 소재에 맞춰 상담합니다.",
-    tone: "blue",
+    title: "작업 준비",
+    description: "현장 확인을 마친 뒤 청소 작업을 준비합니다.",
+    icon: "prepare",
+  },
+  {
+    number: "05",
+    title: "각 구역별 청소",
+    description: "앞서 설명한 범위에 따라 각 구역의 청소를 진행합니다.",
+    icon: "clean",
+  },
+  {
+    number: "06",
+    title: "담당자 검수 후 고객 검수",
+    description: "현장 담당자가 먼저 검수한 뒤 고객님과 함께 현장을 확인합니다.",
+    icon: "inspect",
+  },
+  {
+    number: "07",
+    title: "작업 완료 후 해피콜",
+    description: "작업을 마친 뒤 해피콜로 고객님께 연락드립니다.",
+    icon: "followup",
   },
 ] as const;
 
@@ -149,7 +167,7 @@ export const faqItems = [
   {
     question: "어떤 청소를 문의할 수 있나요?",
     answer:
-      "입주청소를 중심으로 이사청소, 사무실 청소, 소파 청소, 의자 청소를 문의할 수 있습니다. 실제 가능 범위는 운영 정보가 확정된 뒤 상담 과정에서 안내됩니다.",
+      "입주청소, 이사청소, 사무실 청소, 소파 청소, 의자 청소를 문의할 수 있습니다. 공간과 소재에 따른 실제 작업 가능 범위는 상담 과정에서 확인해 주세요.",
   },
   {
     question: "견적 문의 전에 무엇을 준비하면 되나요?",
