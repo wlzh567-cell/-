@@ -338,20 +338,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="closing-section" aria-labelledby="closing-title">
-          <div className="section-shell closing-inner">
-            <p className="section-kicker">A CLEAN BEGINNING</p>
-            <h2 id="closing-title">
-              입주 전, 청소가 필요한 곳부터
-              <br />
-              알려주세요.
-            </h2>
-            <a className="closing-cta" href="#quote">
-              견적 받기
-              <ArrowIcon />
-            </a>
-          </div>
-        </section>
       </main>
 
       <FloatingContactBar />
